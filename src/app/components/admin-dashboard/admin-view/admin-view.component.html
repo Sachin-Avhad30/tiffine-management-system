@@ -1,0 +1,18 @@
+<div>
+  <h3>Welcome To Admin Dashboard</h3>
+  <container-element [ngSwitch]="userStatus">
+    <app-pending-admin-view *ngSwitchCase="'pending'"></app-pending-admin-view>
+    <app-rejected-admin-view
+      *ngSwitchCase="'rejected'"
+    ></app-rejected-admin-view>
+    <div *ngSwitchCase="'approved'">
+      <app-info-charts
+        [role]="role"
+        [pending]="totalPendingRetailerCount"
+        [approved]="totalApprovedRetailerCount"
+        [rejected]="totalRejectedRetailerCount"
+      ></app-info-charts>
+    </div>
+    <div *ngSwitchDefault>Unknown status</div>
+  </container-element>
+</div>

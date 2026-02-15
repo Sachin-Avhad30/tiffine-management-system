@@ -1,0 +1,32 @@
+<div class="custom-dialog-container">
+  <div class="close-button">
+    <button mat-icon-button (click)="onCloseClick()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <h3 class="heading" mat-dialog-title>
+    {{ data.title }}
+  </h3>
+  <div mat-dialog-content>
+    <p>{{ data.message }}</p>
+    @if (data.includeMessage) {
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your message</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="userMessage"
+        placeholder="Type your message here"
+      ></textarea>
+    </mat-form-field>
+    }
+  </div>
+  <div class="dialog-actions">
+    <button mat-stroked-button class="mat-mdc-button" (click)="onNoClick()">
+      No
+    </button>
+    <button mat-stroked-button class="mat-mdc-button" (click)="onYesClick()">
+      Yes
+    </button>
+  </div>
+</div>

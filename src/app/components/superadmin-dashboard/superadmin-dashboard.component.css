@@ -1,0 +1,40 @@
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pie-chart {
+  flex: 1;
+  max-width: 50%;
+  padding: 0;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  max-width: 45%;
+  text-align: center;
+}
+
+.mat-card-container {
+  flex: 1;
+}
+
+.mat-card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.mat-card-content {
+  font-size: 16px;
+}
+
+.content {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4caf50;
+}

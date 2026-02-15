@@ -1,0 +1,31 @@
+body {
+  background: #999;
+}
+.control-section {
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  width: 500px !important;
+}
+.toggle-buttons {
+  margin-top: 8px;
+}
+.custom-toggle-group {
+  border: none;
+}
+.custom-toggle-group .mat-button-toggle-appearance-standard {
+  border: none;
+}
+.custom-toggle-group .mat-button-toggle-appearance-standard:hover {
+  background-color: #f0f0f0;
+}
+.custom-toggle-group .mat-button-toggle-checked {
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+}
+
+.mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+  position: relative;
+  top: -10px !important ;
+}

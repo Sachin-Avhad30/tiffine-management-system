@@ -1,0 +1,77 @@
+<div class="container">
+  <mat-card class="admin-login">
+    <div class="image-section">
+      <img
+        src="https://5.imimg.com/data5/SELLER/Default/2023/4/300781399/KU/OX/KS/110277095/1-500x500.png"
+        alt="login image"
+      />
+    </div>
+    <div class="form-section">
+      <div class="login-section">
+        <mat-card-header>Tiffin Services</mat-card-header>
+        <form [formGroup]="loginForm">
+          <div class="login">
+            <div class="email-input">
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter your email"
+                  formControlName="email"
+                  type="email"
+                />
+                <mat-icon matPrefix>email</mat-icon>
+                <mat-error>{{ emailErrorMessage }} </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="password-input">
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter your password"
+                  formControlName="password"
+                  [type]="hide ? 'password' : 'text'"
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Toggle password visibility'"
+                  [attr.aria-pressed]="!hide"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+                <mat-icon matPrefix>lock</mat-icon>
+                <mat-error>{{ passwordErrorMessage }}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="button">
+              <button
+                mat-stroked-button
+                type="submit"
+                (click)="loginAdmin()"
+                class="mat-mdc-button"
+              >
+                Login
+              </button>
+            </div>
+            <mat-error>{{ invalidCredential }}</mat-error>
+            <mat-card-footer class="footer"
+              ><p>
+                <a routerLink="/admin-signup" class="link">Sign up</a> as Admin
+              </p>
+              <p>
+                forgot password?
+                <a routerLink="/forgot-password" class="link"> click here </a>
+                to reset
+              </p>
+            </mat-card-footer>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card>
+</div>

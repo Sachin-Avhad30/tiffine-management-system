@@ -1,0 +1,89 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$red-palette,
+    ),
+    typography: (
+      brand-family: Roboto "Helvetica Neue" sans-serif,
+      bold-weight: 900,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+html {
+  @include mat.all-component-themes($theme);
+}
+
+:root {
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: #e43e38,
+      container-text-color: white,
+    )
+  );
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: white,
+      container-text-color: black,
+    )
+  );
+  @include mat.paginator-overrides(
+    (
+      container-text-color: black,
+      container-background-color: white,
+    )
+  );
+  @include mat.button-overrides(
+    (
+      container-color: transparent,
+      outline-color: #e43e38,
+      hover-state-layer-opacity: 1,
+    )
+  );
+  .mat-mdc-button.mat-mdc-outlined-button:hover {
+    color: white;
+  }
+  .mat-mdc-button.mat-mdc-outlined-button:hover mat-icon {
+    fill: white;
+  }
+
+  @include mat.card-overrides(
+    (
+      title-text-size: 30px,
+      subtitle-text-color: gray,
+      container-color: white,
+      container-shape: 20px,
+      container-elevation: 0px 4px 6px rgba(0, 0, 0, 0.1),
+    )
+  );
+  @include mat.snack-bar-overrides(
+    (
+      container-color: gray,
+      supporting-text-color: white,
+    )
+  );
+  @include mat.select-overrides(
+    (
+      panel-background-color: white,
+      enabled-trigger-text-color: black,
+    )
+  );
+  @include mat.dialog-overrides(
+    (
+      container-color: white,
+      subhead-color: black,
+    )
+  );
+  @include mat.expansion-overrides(
+    (
+      container-background-color: white,
+      container-text-color: black,
+    )
+  );
+}

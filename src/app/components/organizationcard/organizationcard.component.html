@@ -1,0 +1,57 @@
+ <mat-card appearance="outlined" class="vertical-card">
+    <mat-card-header>
+      <div class="card-header-container">
+        <img
+          mat-card-avatar
+          class="organization-image"
+          [src]="organization.org_image_url ? organization.org_image_url : 'https://i2.pngimg.me/thumb/f/350/4719167575949312.jpg'"
+          alt="Organization Logo"
+        />
+        <div class="organization-details">
+      <mat-card-title>{{ organization.org_name }}</mat-card-title>
+      <!-- <img [src]="organization.org_image_url"> -->
+      <mat-card-subtitle
+        >{{
+          organization.org_created_at | date
+        }}</mat-card-subtitle
+      >
+      <mat-card-subtitle
+        >Locations:
+        {{
+          organization.org_location.length
+        }}</mat-card-subtitle
+      >
+    </div>
+  </div>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <strong>Status:</strong>
+        <span [ngClass]="organization.isActive ? 'status-active' : 'status-inactive'">
+          {{ organization.isActive ? "Active" : "Inactive" }}</span>
+      </p>
+    </mat-card-content>
+    <mat-card-footer>
+      <div class="button-container">
+        <a
+          mat-stroked-button
+          
+          class="mat-mdc-button" [routerLink]="['/navbar/update-organization', organization._id]"
+          >Update<mat-icon class="mat-icon-edit">edit</mat-icon></a
+        >
+        <a
+        mat-stroked-button
+        [routerLink]="['/navbar/view-organization', organization._id]" class="mat-mdc-button"
+        >View<mat-icon>visibility</mat-icon></a
+      >
+        <button
+          mat-stroked-button
+          type="delete"
+          class="mat-mdc-button"
+          (click)="openDialog('0ms', '0ms')"
+        >
+          Delete<mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-footer>
+  </mat-card>

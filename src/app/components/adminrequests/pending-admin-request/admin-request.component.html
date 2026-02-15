@@ -1,0 +1,37 @@
+<div class="control-section">
+  <div class="serach-bar">
+    <mat-form-field class="search" appearance="outline">
+      <mat-label>Search Admins</mat-label>
+      <input
+        class="input"
+        matInput
+        placeholder="Search by name or email"
+        (keyup)="onSearchInput($event)"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="toggle-buttons">
+    <mat-button-toggle-group
+      class="custom-toggle-group"
+      name="adminStatus"
+      aria-label="Admin Status"
+      (change)="onStatusChange($event)"
+    >
+      <mat-button-toggle value="pending" [checked]="true"
+        >Pending Admins</mat-button-toggle
+      >
+      <mat-button-toggle value="approved">Approved Admins</mat-button-toggle>
+      <mat-button-toggle value="rejected">Rejected Admins</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
+
+<app-status-table
+  [adminsArray]="adminsArray"
+  (emitterApprove)="updateStatusAprroved($event)"
+  (emitterReject)="updateStatusRejected($event)"
+  [totalItems]="totalItems"
+  (pageChange)="onPageChange($event)"
+  [searchedQueryNotFound]="searchedQueryNotFound"
+></app-status-table>

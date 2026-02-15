@@ -1,0 +1,38 @@
+.table-wrapper {
+  background: white;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+div {
+  width: 100%;
+}
+
+td {
+  border-bottom: 1px solid rgba(128, 116, 116, 0.1);
+}
+.approved {
+  color: darkgreen;
+}
+.rejected {
+  color: #e43e38;
+}
+.approved:hover {
+  color: darkgreen;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.rejected:hover {
+  color: #e43e38;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.table-body,
+.paginator-section {
+  background-color: #ffffff;
+}
+.custom-dialog-container {
+  height: 20%;
+  width: 20%;
+}

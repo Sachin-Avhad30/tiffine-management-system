@@ -1,0 +1,40 @@
+<div>
+  <div class="control-section">
+    <div class="serach-bar">
+      <mat-form-field class="search" appearance="outline">
+        <mat-label>Search Retailers</mat-label>
+        <input
+          class="input"
+          matInput
+          placeholder="Search by name or email"
+          (keyup)="onSearchInput($event)"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="toggle-buttons">
+      <mat-button-toggle-group
+        class="custom-toggle-group"
+        name="status"
+        aria-label="Retailer Status"
+        (change)="onStatusChange($event)"
+      >
+        <mat-button-toggle value="pending">Pending Retailers</mat-button-toggle>
+        <mat-button-toggle value="approved"
+          >Approved Retailers</mat-button-toggle
+        >
+        <mat-button-toggle value="rejected"
+          >Rejected Retailers</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <app-retailer-status-table
+    [retailers]="allRetailers"
+    (emitterApprove)="updateStatusAprroved($event)"
+    (emitterReject)="updateStatusRejected($event)"
+    [totalItems]="totalItems"
+    [searchedQueryNotFound]="searchedQueryNotFound"
+
+  ></app-retailer-status-table>
+</div>

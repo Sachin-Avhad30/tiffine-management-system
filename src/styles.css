@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin:0px;
+}
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  margin-top: 8px;
+  justify-content: center;
+}
+a {
+  color: blue;
+}
+
+.mat-mdc-form-field{
+  --mdc-outlined-text-field-label-text-size: 0.75rem;
+  --mat-form-field-container-text-size: 0.9rem;
+  --mat-form-field-container-text-outline-line-height: 0.5rem; 
+
+  --mdc-outlined-text-field-focus-outline-color: black;
+  --mdc-outlined-text-field-focus-label-text-color: black;
+
+  --mat-form-field-leading-icon-color: rgb(10, 10, 10);
+}
+
+/* change input height */
+ .mdc-text-field--outlined{
+  height: 35px !important;
+ }
+
+/* change input label position */
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+    top:calc(var(--mat-form-field-container-height)/3.5) !important;
+    margin-bottom: 25px !important;
+  }
+
+  /* change active label above position */
+.mdc-text-field--outlined.mdc-notched-outline--upgraded
+  .mat-mdc-floating-label--float-above,
+.mdc-text-field--outlined
+  .mdc-notched-outline--upgraded
+  .mdc-floating-label--float-above {
+  transform: translateY(-24px) scale(0.75) !important;
+  font-size: 16px !important;
+}
+  /* change label or placeholder position */
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-text-field__input {
+    position: relative;
+    top: -8px !important
+  }
+  .mat-mdc-form-field .mat-mdc-select-arrow {
+    position: relative;
+    top: -10px !important ;
+}
+.mat-mdc-form-field .mat-mdc-select-arrow {
+  position: relative;
+  top: -10px !important ;
+}
+.mat-mdc-select .mat-mdc-select-value-text {
+  position: relative;
+  top: -5px !important ;
+  font-size: 16px !important;
+}
+/* change error message color and position */
+.mat-mdc-form-field-error {
+  padding: 0 10px !;
+  color: red;
+}
+
+.form-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.flex-item {
+  flex: 1 1 30%;
+  min-width: 200px;
+  margin-top: 10px;
+}
+.full-width {
+  width: 100%;
+}
+
+.mat-icon-edit:hover{
+  color:#ffffff
+}
+.mat-icon-view{
+  color:#AF1740
+}
+.mat-icon-delete{
+  color:#AF1740
+}
+
+mat-card.card {
+  padding: 16px;
+  margin-bottom: 16px;
+} 
+
+mat-card.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+

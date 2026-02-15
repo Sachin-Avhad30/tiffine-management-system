@@ -1,0 +1,40 @@
+<div class="serach-bar">
+  <mat-form-field appearance="outline">
+    <mat-label>Search Organization</mat-label>
+    <input
+    [(ngModel)]="searchQuery"
+    matInput
+    placeholder="Search by name"
+    (keyup)="onSearchInput($event)"
+    #nameNode
+  />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  @if(notFoundMessage){
+ <mat-error>
+  {{ notFoundMessage }}</mat-error>
+  }
+</div>
+<div class="displayCard">
+@for (organization of organizationsArray; track organization.org_name ){
+  <app-organization-card
+    class="basis"
+    [organization]="organization"
+    (deleteEventEmitter)="deleteOrganization(organization._id)"
+  ></app-organization-card>
+}
+</div>
+<div class="displayCard">
+<mat-paginator 
+[length]="totalItems" 
+[pageSize]="pageSize" 
+[pageSizeOptions]="[6, 12, 18, 24]" 
+showFirstLastButtons
+(page)="onPageChange($event)"  
+aria-label="Select page">
+</mat-paginator>
+</div>
+
+
+
+

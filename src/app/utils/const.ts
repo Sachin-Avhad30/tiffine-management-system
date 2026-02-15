@@ -1,0 +1,2 @@
+export const SUPERADMIN_ROLE_ID = "67276c8186b969fac0d57362";
+export const ADMIN_ROLE_ID = "672775e4f2a1e38ef52c63c6";

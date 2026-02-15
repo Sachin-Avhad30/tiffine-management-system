@@ -1,0 +1,51 @@
+<mat-toolbar class="custom-toolbar"
+  ><button mat-icon-button (click)="collapsedState()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="tiffin-title">
+    <span class="tiffin-title-black">Tiffin</span>
+    <span class="tiffin-title-white">Services</span>
+  </span>
+
+  <span class="space-between"></span>
+  <span *ngIf="role">
+    <mat-icon (click)="updateProfile()" class="image-icon">
+      <img
+      *ngIf="image; else defaultImage"
+      [src]="image"
+        class="profile-picture"
+      />
+      <ng-template #defaultImage>
+        <img
+          src="assets/default-user.png"
+          alt="Default User"
+          class="profile-picture"
+        />
+      </ng-template>
+    </mat-icon>
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    class="mat-sidenav"
+    opened
+    mode="side"
+    [style.width]="sidenavWidth()"
+  >
+    <mat-nav-list>
+      <a
+        mat-list-item
+        *ngFor="let item of menus"
+        [routerLink]="item.label !== 'Logout' ? item.redirectURL : null"
+        (click)="item.label === 'Logout' ? logout() : null"
+      >
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span matListItemTitle>{{ item.label }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()"
+    ><router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

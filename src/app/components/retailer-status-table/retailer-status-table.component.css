@@ -1,0 +1,53 @@
+div {
+  width: 100%;
+}
+
+/* .mat-row:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+} */
+
+.approved {
+  color: green;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.approved:hover {
+  color: darkgreen;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.rejected {
+  color: red;
+  /* transition: color 0.3s ease, transform 0.3s ease; */
+  transition: opacity 0.3s ease;
+}
+
+.rejected:hover {
+  color: red;
+  transform: scale(1.2);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.table-wrapper {
+  padding: 1rem;
+  overflow-x: auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+div {
+  width: 100%;
+}
+
+td {
+  border-bottom: 1px solid rgba(128, 116, 116, 0.1);
+  overflow: visible;
+}
+
+.table-body,
+.paginator-section {
+  background-color: #ffffff;
+}

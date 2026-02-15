@@ -1,0 +1,23 @@
+.custom-dialog-container {
+  text-align: center;
+  overflow: hidden;
+}
+.close-button {
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: center;
+  text-align: center;
+}
+.dialog-actions {
+  margin-bottom: 32px;
+  justify-content: center;
+  display: flex;
+  gap: 8px;
+}

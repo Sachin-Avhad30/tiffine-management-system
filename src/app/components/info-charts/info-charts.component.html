@@ -1,0 +1,62 @@
+<!-- <div class="dashboard-container">
+  <div id="pie-chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [labels]="chartOptions.labels"
+      [responsive]="chartOptions.responsive"
+    ></apx-chart>
+  </div> -->
+  <div class="dashboard-container">
+    <div id="pie-chart">
+      <div *ngIf="totalCount === 0">
+        <h1 style="display: flex; justify-content: center;">No Data </h1>
+      </div>
+      <apx-chart
+        *ngIf="totalCount > 0"
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [labels]="chartOptions.labels"
+        [responsive]="chartOptions.responsive"
+      ></apx-chart>
+    </div>
+
+  <div class="boxes">
+    <div class="mat-card-container">
+      <mat-card class="card">
+        <mat-card-title class="title">
+          {{
+            role === "superadmin" ? "Pending Admins" : "Pending Retailers"
+          }}</mat-card-title
+        >
+        <mat-card-content>
+          <p class="content">{{ pending }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="mat-card-container">
+      <mat-card class="card">
+        <mat-card-title class="title">
+          {{
+            role === "superadmin" ? "Approved Admins" : "Approved Retailers"
+          }}</mat-card-title
+        >
+        <mat-card-content>
+          <p class="content">{{ approved }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="mat-card-container">
+      <mat-card class="card">
+        <mat-card-title class="title">{{
+          role === "superadmin" ? "Rejected Admins" : "Rejected Retailers"
+        }}</mat-card-title>
+        <mat-card-content>
+          <p class="content">{{ rejected }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

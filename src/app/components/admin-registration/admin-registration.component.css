@@ -1,0 +1,72 @@
+#admin {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom:20px ;
+  }
+  .admin-card{
+    margin-top: 7%;
+    margin-left: 10%;
+    height: 70%;
+    width: 80%;
+  }
+.card-content{
+    text-align: center;
+}
+.flex-item{
+  margin-top: 10px;
+}
+.mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+    position: relative;
+    top: -10px !important ;
+  }
+.button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap:2rem
+  }
+
+
+.scroll-viewport {
+  height: 250px;
+  width: 500px;
+}
+
+.scroll-item {
+  height: 50px;
+}
+
+
+
+/* Ensure consistent sizing and alignment */
+.form-field {
+  width: 100%; /* Matches other input fields */
+  margin-bottom: 16px; /* Adds space between fields */
+  display: flex;
+  flex-direction: row;
+}
+
+.file-label {
+  font-size: 14px;
+  color: #555; /* Match your form's text color */
+  margin-bottom: 8px;
+}
+
+.file-input {
+  width: 100%;
+  height: 40px; /* Match the height of other fields */
+  border: 1px solid #ccc; /* Match the border style */
+  border-radius: 4px; /* Add rounded corners for consistency */
+  font-size: 14px; /* Match font size */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  padding-left: 12px;
+  padding-top: 7px;
+}
+
+.file-input:focus {
+  outline: 2px solid #3f51b5; /* Add focus effect (matching Material design) */
+  border-color: #3f51b5;
+}
+

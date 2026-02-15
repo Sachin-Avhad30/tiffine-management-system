@@ -1,0 +1,131 @@
+<mat-card class="admin-card">
+  <mat-card-content class="card-content">
+    <form [formGroup]="adminForm" (submit)="CollectData()" class="form">
+      <h2 id="admin">{{ isUpdateMode ? "Update Profile" : "SingUp" }}</h2>
+      <div class="form-field">
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            formControlName="userName"
+            type="text"
+            placeholder="username"
+          />
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <mat-error>
+            {{ errorMessageUserName }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" />
+          <mat-icon matPrefix>mail</mat-icon>
+          <mat-error>
+            {{ errorMessageEmail }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Contact Number</mat-label>
+          <input matInput formControlName="contactNumber" />
+          <mat-icon matPrefix>call</mat-icon>
+          <mat-error>
+            {{ errorMessageContactNumber }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" type="text" />
+          <mat-icon matPrefix>house</mat-icon>
+          <mat-error>
+            {{ errorMessageAddress }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div formGroupName="roleSpecificDetails">
+        <div class="form-field">
+          <mat-form-field appearance="outline" class="flex-item">
+            <mat-label>Organization</mat-label>
+            <mat-select
+              formControlName="organizationId"
+              (selectionChange)="onOrganizationChange($event.value)"
+            >
+              <!-- <cdk-virtual-scroll-viewport itemSize="totalItems" class="scroll-viewport">
+              <mat-option *cdkVirtualFor="let organization of organizations" [value]="organization._id" class="scroll-item">
+                {{ organization.org_name }}
+              </mat-option>
+            </cdk-virtual-scroll-viewport> -->
+              @for(organization of organizations; track organization){
+              <mat-option [value]="organization._id">
+                {{ organization.org_name }}
+              </mat-option>
+              }
+            </mat-select>
+            <mat-icon matPrefix>corporate_fare</mat-icon>
+            <mat-error>
+              {{ errorMessageOrganization }}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="flex-item">
+            <mat-label>Organization Location</mat-label>
+            <mat-select
+              formControlName="orgLocation"
+              (selectionChange)="onLocationChange($event.value)"
+            >
+              @for(location of locations; track location) {
+              <mat-option [value]="location.loc" itemSize="totalItems">{{
+                location.loc
+              }}</mat-option>
+              }
+            </mat-select>
+            <mat-icon matPrefix>corporate_fare</mat-icon>
+            <mat-error>
+              {{ errorMessageOrganizationLocation }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form-field" *ngIf="!isUpdateMode">
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" />
+          <mat-icon matPrefix>key</mat-icon>
+          <mat-error class="pass">
+            {{ errorMessagePassword }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="flex-item">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput formControlName="confirmPassword" type="password" />
+          <mat-icon matPrefix>key</mat-icon>
+          <mat-error>
+            {{ errorMessageConfirmPassword }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div *ngIf="isUpdateMode" class="form-field">
+        <input
+          id="image-upload"
+          formControlName="userImage"
+          type="file"
+          accept="image/*"
+          class="file-input"
+          (change)="onFileSelected($event)"
+        />
+      </div>
+      
+      <div class="button-row">
+        <button mat-stroked-button type="submit" class="mat-mdc-button">
+          {{ isUpdateMode ? "UPDATE" : "REGISTER" }}
+        </button>
+        <button mat-stroked-button type="reset" class="mat-mdc-button">
+          RESET
+        </button>
+      </div>
+      <p *ngIf="!isUpdateMode">
+        Already have an account? <a routerLink="/">Login</a>
+      </p>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,64 @@
+.vertical-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  min-width: 200px;
+  margin: 1rem auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.mat-card-title{
+  font-weight: 900;
+}
+.image {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZMog9dB4vSQs1MwDKStNYo_lHZmKEwal1bg&s');
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
+.status-active {
+  color: green; 
+  font-weight: bold;
+}
+
+.status-inactive {
+  color: red; 
+  font-weight: bold;
+}
+.mat-card-title,
+.mat-card-subtitle {
+  font-weight: 600;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+
+.mat-mdc-button{
+  margin: 16px;
+}
+
+.card-header-container {
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+
+.organization-image {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50px; 
+  background-size: cover; 
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  */
+}
+
+.organization-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
